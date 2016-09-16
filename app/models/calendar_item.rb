@@ -1,0 +1,2 @@
+class CalendarItem < ApplicationRecord
+end

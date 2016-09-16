@@ -1,0 +1,2 @@
+class EventSite < ApplicationRecord
+end
