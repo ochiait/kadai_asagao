@@ -15,6 +15,18 @@ class MembersController < ApplicationController
     @member = Member.find(params[:id])
   end
 
+  # 男性のみ表示
+  def male
+    @members = Member.where(gender: 0)
+    render "index"
+  end
+
+  # 女性のみ表示
+  def female
+    @members = Member.where(gender: 1)
+    render "index"
+  end
+
   def new
   end
 
