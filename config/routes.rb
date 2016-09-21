@@ -16,4 +16,5 @@ end
      get "female" #女性
    end
   end
+  resources :calendar_items
 end
