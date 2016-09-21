@@ -14,6 +14,7 @@
     <th>背番号</th>
     <th>ユーザー名</th>
     <th>氏名</th>
+    <th>スコア</th>
     <th>操作</th>
   </tr>
   <% @members.each do |member| %>
@@ -21,7 +22,7 @@
     <td style="text-align: right"><%= member.number %></td>
     <td><%= link_to member.name, member %></td>
     <td><%= member.full_name %></td>
-    <td><%= member.score %></td>
+    <td><%= member.score.to_s(:delimited) %></td>
     <td>
       <% if member.administrator? %>
         <%= "編集 |" %>
