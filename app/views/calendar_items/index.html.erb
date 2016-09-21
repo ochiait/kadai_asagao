@@ -1,0 +1,42 @@
+<%  @page_title = "予定表" %>
+<h1><%=  @page_title %></h1>
+
+<% if @items.present? %>
+<table class="list">
+  <tr>
+    <th>タイトル</th>
+    <th>期間</th>
+    <th>概要</th>
+  </tr>
+  <% @items.each do |i| %>
+  <tr>
+    <td style="text-align: right"><%= i.title %></td>
+    <td>
+      <% if i.all_day? %>
+        <% if i.start_time.to_date == i.end_time.to_date %>
+        <%= i.start_time.strftime("%Y-%m-%d") %>
+        <% else %>
+        <%= i.start_time.strftime("%Y-%m-%d") %>
+         ~
+        <%= i.end_time.strftime("%Y-%m-%d") %>
+        <% end %>
+      <%else%>
+        <% if i.start_time.to_date == i.end_time.to_date %>
+        <%= i.start_time.strftime("%Y-%m-%d %H:%M") %>
+         ~
+        <%= i.end_time.strftime("%H:%M") %>
+        <% else %>
+        <%= i.start_time.strftime("%Y-%m-%d %H:%M") %>
+         ~
+        <%= i.end_time.strftime("%Y-%m-%d %H:%M") %>
+        <% end %>
+      <%end%>
+
+    </td>
+    <td><%= truncate(i.summary, length:23) %></td>
+  </tr>
+  <% end %>
+</table>
+<% else %>
+<p>予定がありません。</p>
+<% end %>

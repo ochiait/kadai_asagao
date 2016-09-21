@@ -10,6 +10,6 @@ gnames = ["太郎", "次郎", "花子"]
     birthday: "1981-12-01",
     gender: [0, 0, 1][idx % 3],
     administrator: (idx == 0),
-    score: rand(100)
+    score: rand(2000)
   )
 end
