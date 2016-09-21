@@ -22,7 +22,7 @@
     <td style="text-align: right"><%= member.number %></td>
     <td><%= link_to member.name, member %></td>
     <td><%= member.full_name %></td>
-    <td><%= member.score.to_s(:delimited) %></td>
+    <td><%= number_with_delimiter(member.score) %></td>
     <td>
       <% if member.administrator? %>
         <%= "編集 |" %>
