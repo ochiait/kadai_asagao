@@ -7,4 +7,9 @@ class CalendarItem < ApplicationRecord
   def  start_time_check
     errors.add( :start_time, :invalid_calendar_item_start_time ) unless start_time <= end_time
   end
+  CATEGORY_NAMES = {
+   1 => "仕事",
+   2 => "家庭",
+   3 => "その他"
+  }
 end
