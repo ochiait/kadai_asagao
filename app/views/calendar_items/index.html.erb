@@ -1,6 +1,8 @@
 <%  @page_title = "予定表" %>
 <h1><%=  @page_title %></h1>
 
+<p><%= link_to "予定の新規登録", :new_calendar_item  %></p>
+
 <% if @items.present? %>
 <table class="list">
   <tr>

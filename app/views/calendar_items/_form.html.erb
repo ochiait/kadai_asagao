@@ -1,0 +1,53 @@
+<%= render "shared/errors", obj: @item %>
+
+<table class="attr">
+  <tr>
+    <th><%= form.label :title, 'タイトル' %></th>
+    <td><%= form.text_field :title%></td>
+  </tr>
+
+  <tr>
+    <th><%= form.label :location, '場所' %></th>
+    <td><%= form.text_field :location %></td>
+  </tr>
+
+  <tr>
+    <th><%= form.label :start_time, '開始日時' %></th>
+    <td><%= form.datetime_select :start_time,
+              start_year: 2015, end_year: Time.now.year,
+              use_month_numbers: true %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :end_time, '終了日時' %></th>
+    <td><%= form.datetime_select :end_time,
+              start_year: 2015, end_year: Time.now.year,
+              use_month_numbers: true %></td>
+  </tr>
+
+  <tr>
+    <th><%= form.label :all_day, '終日' %></th>
+    <td>
+      <%= form.check_box :all_day, {}, "on", "OFF" %>
+    </td>
+  </tr>
+  <tr>
+    <th><%= form.label :summary, '概要' %></th>
+    <td>
+      <%= form.text_area :summary, cols: 40, rows:3 %>
+    </td>
+  </tr>
+  <tr>
+    <th><%= form.label :description, '説明' %></th>
+    <td>
+      <%= form.text_area :description, cols: 40, rows:3 %>
+    </td>
+  </tr>
+  <tr>
+    <th><%= form.label :category, 'カテゴリー' %></th>
+    <td>
+      <label><%= form.radio_button :category, 0 %> 仕事</label>
+      <label><%= form.radio_button :category, 1 %> 家事</label>
+      <label><%= form.radio_button :category, 2 %> その他</label>
+    </td>
+  </tr>
+</table>

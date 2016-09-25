@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "lesson/:action(/:name)" => "lesson"
 
   get "calendar" => "calendar_items#index", as: "calendar"
+  get "category/:category/calendar_items" => "calendar_items#index", as: :categry_calendar_items
 
 namespace :api do
   resources :members

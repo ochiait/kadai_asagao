@@ -10,18 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160916101752) do
+ActiveRecord::Schema.define(version: 20160923101822) do
 
   create_table "calendar_items", force: :cascade do |t|
-    t.string   "title",       null: false
-    t.datetime "start_time",  null: false
-    t.datetime "end_time",    null: false
-    t.boolean  "all_day",     null: false
-    t.text     "description", null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.string   "location",    null: false
-    t.text     "summary",     null: false
+    t.string   "title",                   null: false
+    t.datetime "start_time",              null: false
+    t.datetime "end_time",                null: false
+    t.boolean  "all_day",                 null: false
+    t.text     "description",             null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "location",                null: false
+    t.text     "summary",                 null: false
+    t.integer  "category",    default: 1, null: false
   end
 
   create_table "event_sites", primary_key: "site_id", force: :cascade do |t|

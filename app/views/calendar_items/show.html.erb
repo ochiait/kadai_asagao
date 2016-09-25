@@ -1,0 +1,48 @@
+<%  @page_title = "予定の詳細" %>
+
+<h1><%=  @page_title %></h1>
+
+<p><%= link_to "編集", [:edit, @item] %></p>
+
+<table class="attr">
+  <tr>
+    <th width="150">タイトル</th>
+    <td><%= @item.title %></td>
+  </tr>
+  <tr>
+    <th>場所</th>
+    <td><%= @item.location %></td>
+  </tr>
+  <tr>
+    <th>開始時刻</th>
+    <td><%= @item.start_time %></td>
+  </tr>
+  <tr>
+    <th>終了時刻</th>
+    <td><%= @item.end_time %></td>
+  </tr>
+  <tr>
+    <th>終日</th>
+    <td><%= @item.all_day %></td>
+  </tr>
+  <tr>
+    <th>概要</th>
+    <td><%= @item.summary %></td>
+  </tr>
+  <tr>
+    <th>説明</th>
+    <td><%= @item.description %></td>
+  </tr>
+  <tr>
+    <th>カテゴリー</th>
+      <td>
+      <% if @item.category == 0 %>
+      仕事
+      <% elsif @item.category == 1 %>
+      家事
+      <% else %>
+      その他
+      <% end %>
+    　</td>
+  </tr>
+</table>
