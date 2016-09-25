@@ -9,6 +9,7 @@
     <th>タイトル</th>
     <th>期間</th>
     <th>概要</th>
+    <th>カテゴリー</th>
   </tr>
   <% @items.each do |i| %>
   <tr>
@@ -36,6 +37,15 @@
 
     </td>
     <td><%= truncate(i.summary, length:23) %></td>
+    <td>
+    <% if i.category == 1 %>
+    仕事
+    <% elsif i.category == 2 %>
+    家事
+    <% else %>
+    その他
+    <% end %>
+  　</td>
   </tr>
   <% end %>
 </table>
