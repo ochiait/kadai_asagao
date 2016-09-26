@@ -3,6 +3,10 @@
 
 <p><%= link_to "予定の新規登録", :new_calendar_item  %></p>
 
+<% CalendarItem::CATEGORY_NAMES.each do |k,v| %>
+  <label><%= form.radio_button :category, k %><%= v %></label>
+<% end %>
+
 <% if @items.present? %>
 <table class="list">
   <tr>
