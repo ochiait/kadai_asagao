@@ -45,9 +45,9 @@
   <tr>
     <th><%= form.label :category, 'カテゴリー' %></th>
     <td>
-      <label><%= form.radio_button :category, 1 %> 仕事</label>
-      <label><%= form.radio_button :category, 2 %> 家事</label>
-      <label><%= form.radio_button :category, 3 %> その他</label>
+      <% CalendarItem::CATEGORY_NAMES.each do |k,v| %>
+        <label><%= form.radio_button :category, k %><%= v %></label>
+      <% end %>
     </td>
   </tr>
 </table>

@@ -13,6 +13,12 @@ class CalendarItemsController < ApplicationController
       @item = CalendarItem.find(params[:id])
     end
 
+    # カテゴリーごとに表示
+    def category_calendar_items
+      @items = CalendarItem.where(category: params[:category])
+      render "category"
+    end
+
   # 新規作成フォーム
   def new
     @item = CalendarItem.new
