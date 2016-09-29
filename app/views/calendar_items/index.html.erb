@@ -3,10 +3,11 @@
 
 <p><%= link_to "予定の新規登録", :new_calendar_item  %></p>
 <p>
-<%= link_to "仕事", "categories/1/calendar_items" %>
-<%= link_to "家事", "categories/2/calendar_items" %>
-<%= link_to "趣味", "categories/3/calendar_items" %>
-<%= link_to "その他", "categories/4/calendar_items" %>
+  <% CalendarItem::CATEGORY_NAMES.each do |k,v| %>
+    <%= link_to v, category_calendar_items_path(category: k) %>
+      <!-- #以下のやり方も出来るが望ましくない -->
+     <!-- <%= link_to v, "categories/#{k}/calendar_items" %> -->
+<% end %>
 </p>
 
 <%= render "list" %>
