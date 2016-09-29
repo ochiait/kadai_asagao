@@ -10,6 +10,7 @@ class CalendarItem < ApplicationRecord
   CATEGORY_NAMES = {
    1 => "仕事",
    2 => "家庭",
-   3 => "その他"
+   3 => "趣味",
+   4 => "その他"
   }
 end

@@ -8,6 +8,6 @@ t = Time.current
     description: "シードデータ#{d+1}個目",
     location: "芝#{d+1}丁目",
     summary: "Ruby（ルビー）は、まつもとゆきひろ（通称 Matz）により開発されました。",
-    category: ((d%3) + 1)
+    category: ((d%4) + 1)
   )
 end
