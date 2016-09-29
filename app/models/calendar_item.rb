@@ -11,6 +11,8 @@ class CalendarItem < ApplicationRecord
    1 => "仕事",
    2 => "家庭",
    3 => "趣味",
-   4 => "その他"
+   4 => "買い物",
+   5 => "運動",
+   6 => "その他"
   }
 end

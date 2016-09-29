@@ -33,15 +33,7 @@
     </td>
     <td><%= truncate(i.summary, length:23) %></td>
     <td>
-    <% if i.category == 1 %>
-    仕事
-    <% elsif i.category == 2 %>
-    家事
-    <% elsif i.category == 3 %>
-    趣味
-    <% else %>
-    その他
-    <% end %>
+    <%= CalendarItem::CATEGORY_NAMES[i.category] %>
   　</td>
   </tr>
   <% end %>
